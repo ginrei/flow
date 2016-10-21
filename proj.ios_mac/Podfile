@@ -1,0 +1,15 @@
+xcodeproj 'Flow.xcodeproj'
+
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'Flow iOS' do
+
+	pod "box2d"
+
+end
+
+target 'Flow Mac' do
+
+end
+

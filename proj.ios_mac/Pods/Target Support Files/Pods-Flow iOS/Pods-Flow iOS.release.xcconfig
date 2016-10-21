@@ -1,0 +1,6 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/box2d" "${PODS_ROOT}/Headers/Public/box2d/Collision" "${PODS_ROOT}/Headers/Public/box2d/Collision/Shapes" "${PODS_ROOT}/Headers/Public/box2d/Common" "${PODS_ROOT}/Headers/Public/box2d/Dynamics" "${PODS_ROOT}/Headers/Public/box2d/Dynamics/Contacts" "${PODS_ROOT}/Headers/Public/box2d/Dynamics/Joints" "${PODS_ROOT}/Headers/Public/box2d/Rope"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/box2d" -isystem "${PODS_ROOT}/Headers/Public/box2d/Collision" -isystem "${PODS_ROOT}/Headers/Public/box2d/Collision/Shapes" -isystem "${PODS_ROOT}/Headers/Public/box2d/Common" -isystem "${PODS_ROOT}/Headers/Public/box2d/Dynamics" -isystem "${PODS_ROOT}/Headers/Public/box2d/Dynamics/Contacts" -isystem "${PODS_ROOT}/Headers/Public/box2d/Dynamics/Joints" -isystem "${PODS_ROOT}/Headers/Public/box2d/Rope"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-Flow iOS-box2d"
+OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_ROOT = ${SRCROOT}/Pods

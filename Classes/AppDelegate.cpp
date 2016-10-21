@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "MainScene.h"
 
 USING_NS_CC;
 
@@ -23,13 +23,25 @@ void AppDelegate::initGLContextAttrs()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+    
+    Size designResolutionSize = Size(750, 1334);
+    Size ResourceDpi = Size(750,1334);
+    
     // initialize director
     auto director = Director::getInstance();
+    director->setContentScaleFactor(MIN(ResourceDpi.height / designResolutionSize.height ,
+                                        ResourceDpi.width / designResolutionSize.width));
+    
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::create("Flow");
         director->setOpenGLView(glview);
+        glview->setDesignResolutionSize(designResolutionSize.width,
+                                        designResolutionSize.height,
+                                        ResolutionPolicy::SHOW_ALL);
     }
+    
+    
 
     // turn on display FPS
     director->setDisplayStats(true);
@@ -38,7 +50,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    auto scene = MainScene::createScene();
 
     // run
     director->runWithScene(scene);
